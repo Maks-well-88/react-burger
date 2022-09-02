@@ -7,7 +7,7 @@ import { data } from '../../utils/data.js';
 
 function App() {
   return (
-    <div className="">
+    <div>
       <AppHeader />
       <BurgerIngredients />
       <BurgerConstructor />
