@@ -5,8 +5,27 @@
   src: url('./fonts/JetBrainsMono-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 700;
+  font-size: normal;
+  src: url('./fonts/JetBrainsMono-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 600;
+  font-size: normal;
+  src: url('./fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  scrollbar-color: #8585AD #2F2F37;
+  scrollbar-width: thin;
 }

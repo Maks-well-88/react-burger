@@ -3,15 +3,19 @@ import style from './app.module.css';
 import AppHeader from '../app-header/app-header';
 import BurgerIngredients from '../burger-ingredients/burger-ingredients';
 import BurgerConstructor from '../burger-constructor/burger-constructor';
-import { data } from '../../utils/data.js';
+import { dataIngredients } from '../../utils/data.js';
 
 function App() {
+  const state = { data: dataIngredients };
+
   return (
-    <div>
+    <React.Fragment>
       <AppHeader />
-      <BurgerIngredients />
-      <BurgerConstructor />
-    </div>
+      <main className={style.container}>
+        <BurgerIngredients data={state.data} />
+        <BurgerConstructor data={state.data} />
+      </main>
+    </React.Fragment>
   );
 }
 
