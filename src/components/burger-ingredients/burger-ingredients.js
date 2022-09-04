@@ -2,19 +2,10 @@ import React from 'react';
 import style from './burger-ingredients.module.css';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import IngredientsGroup from '../ingredients-group/ingredients-group.js';
-import PropTypes from 'prop-types';
-
-const ingredientPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-  })
-);
+import { ingredientType } from '../../utils/types.js';
 
 BurgerIngredients.propTypes = {
-  data: ingredientPropTypes.isRequired,
+  data: ingredientType.isRequired,
 };
 
 function BurgerIngredients({ data }) {
@@ -27,7 +18,7 @@ function BurgerIngredients({ data }) {
   return (
     <section className={style.ingredients}>
       <h1 className={style.heading}>Соберите бургер</h1>
-      <div style={{ display: 'flex' }}>
+      <div className={style.tabs}>
         <Tab value="one" active={current === 'one'} onClick={setCurrent}>
           Булки
         </Tab>

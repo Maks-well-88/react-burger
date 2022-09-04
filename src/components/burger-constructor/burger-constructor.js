@@ -6,19 +6,10 @@ import {
   CurrencyIcon,
   DragIcon,
 } from '@ya.praktikum/react-developer-burger-ui-components';
-import PropTypes from 'prop-types';
-
-const ingredientPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-  })
-);
+import { ingredientType } from '../../utils/types.js';
 
 BurgerConstructor.propTypes = {
-  data: ingredientPropTypes.isRequired,
+  data: ingredientType.isRequired,
 };
 
 function BurgerConstructor({ data }) {
@@ -28,7 +19,7 @@ function BurgerConstructor({ data }) {
         <ConstructorElement
           type="top"
           isLocked={true}
-          text={data[0].name}
+          text={data[0].name + ' (верх)'}
           price={data[0].price}
           thumbnail={data[0].image}
         />
@@ -45,9 +36,9 @@ function BurgerConstructor({ data }) {
         <ConstructorElement
           type="bottom"
           isLocked={true}
-          text={data[data.length - 1].name}
-          price={data[data.length - 1].price}
-          thumbnail={data[data.length - 1].image}
+          text={data[0].name + ' (низ)'}
+          price={data[0].price}
+          thumbnail={data[0].image}
         />
       </div>
       <div className={style.total}>

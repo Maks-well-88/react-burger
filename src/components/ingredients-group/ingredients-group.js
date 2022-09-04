@@ -2,18 +2,10 @@ import React from 'react';
 import style from './ingredients-group.module.css';
 import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-components';
 import PropTypes from 'prop-types';
-
-const ingredientPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-  })
-);
+import { ingredientType } from '../../utils/types.js';
 
 IngredientsGroup.propTypes = {
-  data: ingredientPropTypes.isRequired,
+  data: ingredientType.isRequired,
   group: PropTypes.string.isRequired,
 };
 
