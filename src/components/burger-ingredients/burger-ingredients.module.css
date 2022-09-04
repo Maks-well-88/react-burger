@@ -1,0 +1,42 @@
+.ingredients {
+  width: 600px;
+  margin-bottom: 40px;
+}
+
+.heading {
+  font-family: 'JetBrains Mono';
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  margin: 0 0 20px 0;
+  padding-top: 40px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.ingredientsContainer {
+  margin-top: 40px;
+  max-height: 756px;
+  overflow-y: scroll;
+}
+
+.ingredientsContainer::-webkit-scrollbar {
+  width: 8px;
+  background-color: #2F2F37;
+}
+
+.ingredientsContainer::-webkit-scrollbar-thumb {
+  height: 492px;
+  background-color: #8585AD;
+}
+
+.ingredientsGroupTitle {
+  font-family: 'JetBrains Mono';
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,70 @@
+.constructor {
+  padding-top: 100px;
+  width: 600px;
+  margin-bottom: 40px;
+}
+
+.burgerTopBun {
+  cursor: pointer;
+  width: 568px;
+  height: 80px;
+  margin: 0 0 16px 48px;
+}
+
+.burgerItems {
+  width: 600px;
+  max-height: 462px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 0;
+}
+
+.burgerItems::-webkit-scrollbar {
+  width: 8px;
+  background-color: #2F2F37;
+}
+
+.burgerItems::-webkit-scrollbar-thumb {
+  height: 292px;
+  background-color: #8585AD;
+}
+
+.burgerItem {
+  cursor: pointer;
+  width: 568px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 16px 5px;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+}
+
+.burgerItem:last-of-type {
+  margin-bottom: 0;
+}
+
+.burgerBottomBun {
+  composes: burgerTopBun;
+  margin: 16px 0 0 48px;
+}
+
+.total {
+  margin-top: 42px;
+  margin-bottom: 52px;
+  width: 583px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.total svg {
+  width: 36px;
+  height: 36px;
+  margin-left: 8px;
+  margin-right: 40px;
+}
