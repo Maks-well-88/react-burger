@@ -9,7 +9,7 @@ IngredientsGroup.propTypes = {
   group: PropTypes.string.isRequired,
 };
 
-function IngredientsGroup({ data, group }) {
+export function IngredientsGroup({ data, group }) {
   const groupData = data.filter((item) => {
     return item.type === group;
   });
@@ -30,5 +30,3 @@ function IngredientsGroup({ data, group }) {
     </ul>
   );
 }
-
-export default IngredientsGroup;

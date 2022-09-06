@@ -12,7 +12,7 @@ BurgerConstructor.propTypes = {
   data: ingredientType.isRequired,
 };
 
-function BurgerConstructor({ data }) {
+export function BurgerConstructor({ data }) {
   return (
     <section className={style.constructor}>
       <div className={style.burgerTopBun}>
@@ -51,5 +51,3 @@ function BurgerConstructor({ data }) {
     </section>
   );
 }
-
-export default BurgerConstructor;

@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './app.module.css';
-import AppHeader from '../app-header/app-header';
-import BurgerIngredients from '../burger-ingredients/burger-ingredients';
-import BurgerConstructor from '../burger-constructor/burger-constructor';
+import { AppHeader } from '../app-header/app-header';
+import { BurgerIngredients } from '../burger-ingredients/burger-ingredients';
+import { BurgerConstructor } from '../burger-constructor/burger-constructor';
 import { dataIngredients } from '../../utils/data.js';
 
-function App() {
+export function App() {
   const state = { data: dataIngredients };
 
   return (
@@ -18,5 +18,3 @@ function App() {
     </React.Fragment>
   );
 }
-
-export default App;

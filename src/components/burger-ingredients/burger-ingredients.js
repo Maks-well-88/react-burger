@@ -1,14 +1,14 @@
 import React from 'react';
 import style from './burger-ingredients.module.css';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
-import IngredientsGroup from '../ingredients-group/ingredients-group.js';
+import { IngredientsGroup } from '../ingredients-group/ingredients-group';
 import { ingredientType } from '../../utils/types.js';
 
 BurgerIngredients.propTypes = {
   data: ingredientType.isRequired,
 };
 
-function BurgerIngredients({ data }) {
+export function BurgerIngredients({ data }) {
   const [current, setCurrent] = React.useState('one');
   const state = {
     data: data,
@@ -40,5 +40,3 @@ function BurgerIngredients({ data }) {
     </section>
   );
 }
-
-export default BurgerIngredients;
