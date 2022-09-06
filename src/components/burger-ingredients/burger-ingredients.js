@@ -8,7 +8,7 @@ BurgerIngredients.propTypes = {
   data: ingredientType.isRequired,
 };
 
-export function BurgerIngredients({ data }) {
+export function BurgerIngredients({ data, openModal }) {
   const [current, setCurrent] = React.useState('one');
   const group = ['bun', 'sauce', 'main'];
 
@@ -28,11 +28,11 @@ export function BurgerIngredients({ data }) {
       </div>
       <div className={style.ingredientsContainer}>
         <h2 className={style.ingredientsGroupTitle}>Булки</h2>
-        <IngredientsGroup data={data} group={group[0]} />
+        <IngredientsGroup data={data} group={group[0]} openModal={openModal} />
         <h2 className={style.ingredientsGroupTitle}>Соусы</h2>
-        <IngredientsGroup data={data} group={group[1]} />
+        <IngredientsGroup data={data} group={group[1]} openModal={openModal} />
         <h2 className={style.ingredientsGroupTitle}>Начинки</h2>
-        <IngredientsGroup data={data} group={group[2]} />
+        <IngredientsGroup data={data} group={group[2]} openModal={openModal} />
       </div>
     </section>
   );

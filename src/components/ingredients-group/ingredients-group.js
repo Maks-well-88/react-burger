@@ -9,7 +9,7 @@ IngredientsGroup.propTypes = {
   group: PropTypes.string.isRequired,
 };
 
-export function IngredientsGroup({ data, group }) {
+export function IngredientsGroup({ data, group, openModal }) {
   const groupData = data.filter((item) => {
     return item.type === group;
   });
@@ -17,7 +17,7 @@ export function IngredientsGroup({ data, group }) {
   return (
     <ul className={style.ingredientsGroupList}>
       {groupData.map((item) => (
-        <li key={item._id} className={style.ingredientsElement}>
+        <li key={item._id} className={style.ingredientsElement} onClick={openModal}>
           <Counter count={1} size="default" />
           <img className={style.image} src={item.image_large} alt={item.name} />
           <div className={style.price}>
