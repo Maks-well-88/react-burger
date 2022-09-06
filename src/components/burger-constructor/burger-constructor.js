@@ -25,7 +25,7 @@ export function BurgerConstructor({ data }) {
         />
       </div>
       <ul className={style.burgerItems}>
-        {data.slice(1, -1).map((item) => (
+        {data.slice(2).map((item) => (
           <li key={item._id} className={style.burgerItem}>
             <DragIcon type="primary" />
             <ConstructorElement text={item.name} price={item.price} thumbnail={item.image} />

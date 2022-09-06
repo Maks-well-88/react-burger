@@ -10,10 +10,7 @@ BurgerIngredients.propTypes = {
 
 export function BurgerIngredients({ data }) {
   const [current, setCurrent] = React.useState('one');
-  const state = {
-    data: data,
-    group: ['bun', 'sauce', 'main'],
-  };
+  const group = ['bun', 'sauce', 'main'];
 
   return (
     <section className={style.ingredients}>
@@ -31,11 +28,11 @@ export function BurgerIngredients({ data }) {
       </div>
       <div className={style.ingredientsContainer}>
         <h2 className={style.ingredientsGroupTitle}>Булки</h2>
-        <IngredientsGroup data={state.data} group={state.group[0]} />
+        <IngredientsGroup data={data} group={group[0]} />
         <h2 className={style.ingredientsGroupTitle}>Соусы</h2>
-        <IngredientsGroup data={data} group={state.group[1]} />
+        <IngredientsGroup data={data} group={group[1]} />
         <h2 className={style.ingredientsGroupTitle}>Начинки</h2>
-        <IngredientsGroup data={data} group={state.group[2]} />
+        <IngredientsGroup data={data} group={group[2]} />
       </div>
     </section>
   );
