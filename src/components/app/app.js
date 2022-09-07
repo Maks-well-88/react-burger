@@ -5,12 +5,14 @@ import { BurgerIngredients } from '../burger-ingredients/burger-ingredients';
 import { BurgerConstructor } from '../burger-constructor/burger-constructor';
 import { ModalOverlay } from '../modal-overlay/modal-overlay';
 import { Modal } from '../modal/modal';
+import { IngredientDetails } from '../ingredient-details/ingredient-details';
 
 const INGREDIENTS_DATA_API = 'https://norma.nomoreparties.space/api/ingredients';
 
 export function App() {
   const [ingredientsData, setIngredientsData] = React.useState([]);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
+  const [ingredientInfo, setingredientInfo] = React.useState();
 
   React.useEffect(() => {
     fetch(INGREDIENTS_DATA_API)
@@ -19,13 +21,16 @@ export function App() {
       .catch((error) => setIngredientsData({ isError: true }));
   }, []);
 
-  const handleOpenClick = () => setModalIsOpen(true);
+  const handleOpenClick = (ingredientInfo) => {
+    setingredientInfo(ingredientInfo);
+    setModalIsOpen(true);
+  };
+
   const handleCloseClick = () => setModalIsOpen(false);
 
   return (
     <React.Fragment>
       <AppHeader />
-      {console.log(ingredientsData.data)}
       {ingredientsData.data && (
         <main className={style.container}>
           <BurgerIngredients data={ingredientsData.data} openModal={handleOpenClick} />
@@ -35,7 +40,9 @@ export function App() {
       <div style={{ overflow: 'hidden' }}>
         {modalIsOpen && (
           <ModalOverlay closeModal={handleCloseClick}>
-            <Modal data={ingredientsData.data} closeModal={handleCloseClick} />
+            <Modal closeModal={handleCloseClick}>
+              <IngredientDetails data={ingredientInfo} />
+            </Modal>
           </ModalOverlay>
         )}
       </div>
