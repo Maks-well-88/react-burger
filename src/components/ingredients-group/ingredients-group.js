@@ -7,6 +7,7 @@ import { ingredientType } from '../../utils/types.js';
 IngredientsGroup.propTypes = {
   data: ingredientType.isRequired,
   group: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
 export function IngredientsGroup({ data, group, openModal }) {

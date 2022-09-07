@@ -7,9 +7,11 @@ import {
   DragIcon,
 } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ingredientType } from '../../utils/types.js';
+import PropTypes from 'prop-types';
 
 BurgerConstructor.propTypes = {
   data: ingredientType.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
 export function BurgerConstructor({ data, openModal }) {

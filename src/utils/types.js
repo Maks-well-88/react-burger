@@ -8,3 +8,12 @@ export const ingredientType = PropTypes.arrayOf(
     image: PropTypes.string.isRequired,
   })
 );
+
+export const ingredientDetailsType = PropTypes.shape({
+  image_large: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  calories: PropTypes.number.isRequired,
+  proteins: PropTypes.number.isRequired,
+  fat: PropTypes.number.isRequired,
+  carbohydrates: PropTypes.number.isRequired,
+});

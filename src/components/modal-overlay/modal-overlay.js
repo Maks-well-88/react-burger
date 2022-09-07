@@ -1,5 +1,11 @@
 import style from './modal-overlay.module.css';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+
+ModalOverlay.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  children: PropTypes.object.isRequired,
+};
 
 const modalRoot = document.getElementById('modals');
 

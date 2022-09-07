@@ -1,6 +1,13 @@
 import React from 'react';
 import style from './modal.module.css';
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import PropTypes from 'prop-types';
+
+Modal.propTypes = {
+  selector: PropTypes.string.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  children: PropTypes.object.isRequired,
+};
 
 export function Modal({ selector, closeModal, children }) {
   React.useEffect(() => {
