@@ -17,7 +17,11 @@ export function IngredientsGroup({ data, group, openModal }) {
   return (
     <ul className={style.ingredientsGroupList}>
       {groupData.map((item) => (
-        <li key={item._id} className={style.ingredientsElement} onClick={() => openModal(item)}>
+        <li
+          key={item._id}
+          className={style.ingredientsElement}
+          onClick={() => openModal({ item, type: 'ingridient' })}
+        >
           <Counter count={1} size="default" />
           <img className={style.image} src={item.image_large} alt={item.name} />
           <div className={style.price}>

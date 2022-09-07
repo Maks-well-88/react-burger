@@ -12,7 +12,7 @@ BurgerConstructor.propTypes = {
   data: ingredientType.isRequired,
 };
 
-export function BurgerConstructor({ data }) {
+export function BurgerConstructor({ data, openModal }) {
   return (
     <section className={style.constructor}>
       <div className={style.burgerTopBun}>
@@ -44,7 +44,7 @@ export function BurgerConstructor({ data }) {
       <div className={style.total}>
         <p className="text text_type_digits-medium">610</p>
         <CurrencyIcon width={33} height={33} type="primary" />
-        <Button type="primary" size="large">
+        <Button type="primary" size="large" onClick={() => openModal({ type: 'order' })}>
           Оформить заказ
         </Button>
       </div>

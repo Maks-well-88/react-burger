@@ -2,7 +2,7 @@ import React from 'react';
 import style from './modal.module.css';
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
-export function Modal({ closeModal, children }) {
+export function Modal({ selector, closeModal, children }) {
   React.useEffect(() => {
     document.addEventListener('keydown', handleCloseEsc);
     return () => document.removeEventListener('keydown', handleCloseEsc);
@@ -12,8 +12,12 @@ export function Modal({ closeModal, children }) {
 
   return (
     <div className={style.modal}>
-      <div className={style.heading}>
-        <p className="text text_type_main-large">Детали ингредиента</p>
+      <div className={style.headingWrap}>
+        {selector === 'ingridient' ? (
+          <p className={style.ingridient}>Детали ингредиента</p>
+        ) : (
+          <p className={style.order}>Детали ингредиента</p>
+        )}
         <span onClick={closeModal}>
           <CloseIcon type="primary" />
         </span>
