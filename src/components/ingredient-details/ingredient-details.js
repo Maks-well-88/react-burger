@@ -1,8 +1,8 @@
 import style from './ingredient-details.module.css';
-import { ingredientDetailsType } from '../../utils/types';
+import { ingredientType } from '../../utils/types';
 
 IngredientDetails.propTypes = {
-  data: ingredientDetailsType.isRequired,
+  data: ingredientType.isRequired,
 };
 
 export function IngredientDetails({ data }) {

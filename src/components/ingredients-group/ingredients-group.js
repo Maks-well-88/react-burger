@@ -2,10 +2,10 @@ import React from 'react';
 import style from './ingredients-group.module.css';
 import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-components';
 import PropTypes from 'prop-types';
-import { ingredientType } from '../../utils/types.js';
+import { ingredientsArrayType } from '../../utils/types.js';
 
 IngredientsGroup.propTypes = {
-  data: ingredientType.isRequired,
+  data: ingredientsArrayType.isRequired,
   group: PropTypes.string.isRequired,
   openModal: PropTypes.func.isRequired,
 };
@@ -21,7 +21,7 @@ export function IngredientsGroup({ data, group, openModal }) {
         <li
           key={item._id}
           className={style.ingredientsElement}
-          onClick={() => openModal({ item, type: 'ingridient' })}
+          onClick={() => openModal({ item, hasTitle: true, title: 'Детали ингредиента' })}
         >
           <Counter count={1} size="default" />
           <img className={style.image} src={item.image_large} alt={item.name} />

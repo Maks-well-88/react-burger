@@ -2,11 +2,11 @@ import React from 'react';
 import style from './burger-ingredients.module.css';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import { IngredientsGroup } from '../ingredients-group/ingredients-group';
-import { ingredientType } from '../../utils/types.js';
+import { ingredientsArrayType } from '../../utils/types.js';
 import PropTypes from 'prop-types';
 
 BurgerIngredients.propTypes = {
-  data: ingredientType.isRequired,
+  data: ingredientsArrayType.isRequired,
   openModal: PropTypes.func.isRequired,
 };
 
