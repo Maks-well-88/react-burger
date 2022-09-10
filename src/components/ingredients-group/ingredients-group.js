@@ -2,14 +2,15 @@ import React from 'react';
 import style from './ingredients-group.module.css';
 import { CurrencyIcon, Counter } from '@ya.praktikum/react-developer-burger-ui-components';
 import PropTypes from 'prop-types';
-import { ingredientType } from '../../utils/types.js';
+import { ingredientsArrayType } from '../../utils/types.js';
 
 IngredientsGroup.propTypes = {
-  data: ingredientType.isRequired,
+  data: ingredientsArrayType.isRequired,
   group: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
-function IngredientsGroup({ data, group }) {
+export function IngredientsGroup({ data, group, openModal }) {
   const groupData = data.filter((item) => {
     return item.type === group;
   });
@@ -17,7 +18,11 @@ function IngredientsGroup({ data, group }) {
   return (
     <ul className={style.ingredientsGroupList}>
       {groupData.map((item) => (
-        <li key={item._id} className={style.ingredientsElement}>
+        <li
+          key={item._id}
+          className={style.ingredientsElement}
+          onClick={() => openModal({ item, hasTitle: true, title: 'Детали ингредиента' })}
+        >
           <Counter count={1} size="default" />
           <img className={style.image} src={item.image_large} alt={item.name} />
           <div className={style.price}>
@@ -30,5 +35,3 @@ function IngredientsGroup({ data, group }) {
     </ul>
   );
 }
-
-export default IngredientsGroup;

@@ -1,19 +1,18 @@
 import React from 'react';
 import style from './burger-ingredients.module.css';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
-import IngredientsGroup from '../ingredients-group/ingredients-group.js';
-import { ingredientType } from '../../utils/types.js';
+import { IngredientsGroup } from '../ingredients-group/ingredients-group';
+import { ingredientsArrayType } from '../../utils/types.js';
+import PropTypes from 'prop-types';
 
 BurgerIngredients.propTypes = {
-  data: ingredientType.isRequired,
+  data: ingredientsArrayType.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
-function BurgerIngredients({ data }) {
+export function BurgerIngredients({ data, openModal }) {
   const [current, setCurrent] = React.useState('one');
-  const state = {
-    data: data,
-    group: ['bun', 'sauce', 'main'],
-  };
+  const group = ['bun', 'sauce', 'main'];
 
   return (
     <section className={style.ingredients}>
@@ -31,14 +30,12 @@ function BurgerIngredients({ data }) {
       </div>
       <div className={style.ingredientsContainer}>
         <h2 className={style.ingredientsGroupTitle}>Булки</h2>
-        <IngredientsGroup data={state.data} group={state.group[0]} />
+        <IngredientsGroup data={data} group={group[0]} openModal={openModal} />
         <h2 className={style.ingredientsGroupTitle}>Соусы</h2>
-        <IngredientsGroup data={data} group={state.group[1]} />
+        <IngredientsGroup data={data} group={group[1]} openModal={openModal} />
         <h2 className={style.ingredientsGroupTitle}>Начинки</h2>
-        <IngredientsGroup data={data} group={state.group[2]} />
+        <IngredientsGroup data={data} group={group[2]} openModal={openModal} />
       </div>
     </section>
   );
 }
-
-export default BurgerIngredients;

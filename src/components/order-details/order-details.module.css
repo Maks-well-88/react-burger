@@ -1,0 +1,29 @@
+.title {
+  margin: 32px 0 60px 0;
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #F2F2F3;
+}
+
+.image {
+  margin-bottom: 60px;
+}
+
+.info {
+  margin: 0;
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #F2F2F3;
+}
+
+.waitText {
+  composes: info;
+  margin: 8px 0 119px 0;
+  color: #8585AD;
+}

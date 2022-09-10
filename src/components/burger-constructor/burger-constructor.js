@@ -6,13 +6,15 @@ import {
   CurrencyIcon,
   DragIcon,
 } from '@ya.praktikum/react-developer-burger-ui-components';
-import { ingredientType } from '../../utils/types.js';
+import { ingredientsArrayType } from '../../utils/types.js';
+import PropTypes from 'prop-types';
 
 BurgerConstructor.propTypes = {
-  data: ingredientType.isRequired,
+  data: ingredientsArrayType.isRequired,
+  openModal: PropTypes.func.isRequired,
 };
 
-function BurgerConstructor({ data }) {
+export function BurgerConstructor({ data, openModal }) {
   return (
     <section className={style.constructor}>
       <div className={style.burgerTopBun}>
@@ -25,7 +27,7 @@ function BurgerConstructor({ data }) {
         />
       </div>
       <ul className={style.burgerItems}>
-        {data.slice(1, -1).map((item) => (
+        {data.slice(2).map((item) => (
           <li key={item._id} className={style.burgerItem}>
             <DragIcon type="primary" />
             <ConstructorElement text={item.name} price={item.price} thumbnail={item.image} />
@@ -44,12 +46,10 @@ function BurgerConstructor({ data }) {
       <div className={style.total}>
         <p className="text text_type_digits-medium">610</p>
         <CurrencyIcon width={33} height={33} type="primary" />
-        <Button type="primary" size="large">
+        <Button type="primary" size="large" onClick={() => openModal({ hasTitle: false })}>
           Оформить заказ
         </Button>
       </div>
     </section>
   );
 }
-
-export default BurgerConstructor;

@@ -7,6 +7,7 @@
 }
 
 .ingredientsElement {
+  cursor: pointer;
   list-style-type: none;
   width: 272px;
   height: 208px;
